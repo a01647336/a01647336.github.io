@@ -10,6 +10,9 @@
 
 body{
     height: 100vh;
+    background: red;
+    background: rgb(30, 30, 30);
+    background: rgba(30, 30, 30, 0.8);
     background-position: center;
     background-size: cover;
 }
