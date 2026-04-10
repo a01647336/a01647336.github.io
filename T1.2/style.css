@@ -1,0 +1,30 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Links */
+.menu li a {
+    color: black;
+    font-weight: 500;
+}
+
+/* Hover bonito */
+.menu li a:hover {
+    color: #ff758c;
+}
+

@@ -1,0 +1,69 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.menu li a {
+    text-decoration: none;
+    color: black;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Links */
+.menu li a {
+    color: black;
+    font-weight: 500;
+}
+
+/* Hover bonito */
+.menu li a:hover {
+    color: #ff758c;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center; /* centra horizontal */
+    margin-top: 20px;
+}
+
+.search-input {
+    padding: 15px;
+    width: 60%;          
+    max-width: 600px;    
+    border: 1px solid #ccc;
+    font-size: 18px;
+}
+
+.donate {
+    background-color: #ff758c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.submit {
+    text-decoration: none;   
+    background-color: gray;
+    color: white;           
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;   
+}

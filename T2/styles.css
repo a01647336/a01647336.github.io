@@ -1,0 +1,36 @@
+body {
+    background-color: yellow;
+    color: purple;
+    font-family: "Comic Sans MS";
+}
+
+h1 {
+    color: red;
+    background-color: lime;
+}
+
+h2{
+    color: blue;
+    background-color: lightgray;
+}
+
+p {
+    background-color: cyan;
+}
+
+.box {
+    border: 10px dashed black;
+    margin: 20px;
+    padding: 20px;
+    background-color: pink;
+}
+
+#special {
+    background-color: orange;
+    font-size: 30px;
+}
+
+table, th, td {
+    border: 3px solid black;
+    background-color: white;
+}

@@ -1,0 +1,16 @@
+body{
+    background-color: blueviolet;
+    color: black;
+
+}
+
+div{
+    border: 1px solid white;
+}
+
+#contenedor{
+    border: 10px solid yellow;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 1fr 3fr;
+}

@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.header {
+  background: #0f172a;
+  color: white;
+  padding: 15px 0;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* NAV */
+.nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  color: #38bdf8;
+}
+
+/* BOTONES */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.primary {
+  background: #38bdf8;
+  color: white;
+}
+
+.secondary {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+/* BANNER */
+.banner {
+  height: 80vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('https://picsum.photos/1600/900') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.banner-content h2 {
+  font-size: 3rem;
+}
+
+.banner-content p {
+  margin: 15px 0;
+  font-size: 1.2rem;
+}

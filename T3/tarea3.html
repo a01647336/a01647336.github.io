@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase antes de vacaciones</title>
+    <link rel="stylesheet" href="./estilos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body class="bg-dark text-light">
+
+<iframe 
+  class="w-100 rounded shadow mb-3"
+  src="https://open.spotify.com/embed/track/0JoHqmlqE0W0i9prt6kcHR"
+  height="80"
+  frameborder="0"
+  allow="autoplay; clipboard-write; encrypted-media"
+  loading="lazy">
+</iframe>
+
+    <div id="contenedor" class="container mt-4 p-4 bg-dark text-light rounded shadow">
+        <div class="elemento alert alert-primary text-center">Sección 1</div>
+        <div class="elemento alert alert-secondary text-center">Sección 2</div>
+
+        <p id="parrafo" class="fs-5 fw-bold text-danger">bob</p>
+        <p></p>
+        
+    </div>
+
+        <button type="button" class="btn btn-warning me-2 mb-2" id="button">Book</button>
+
+        <button id="Biografia" class="btn btn-success me-2 mb-2">Biografia</button>
+        <button id="FanArt" class="btn btn-success me-2 mb-2">FanArt</button>
+
+        <button id="Biografia2" class="btn btn-outline-success me-2 mb-2">Biografia2</button>
+        <button id="FanArt2" class="btn btn-outline-success me-2 mb-2">FanArt2</button>
+
+    <script>
+      console.log("Niggers");
+      let t = 2005;
+      const c=12;
+      console.log(t);
+
+      let p={"titulo":"LLano en llamas","Autor":"Juan Rulfo"};
+      console.log(p.Autor);
+
+      const suma = (a,b) => a+b;
+      console.log(suma(5,3));
+
+      let d = document.createElement("p");
+      d.textContent = "Hola mundo";
+
+      document.getElementById("contenedor").appendChild(d);
+
+      let d2 = document.getElementById("parrafo");
+      d2.setAttribute("style", "color: red");
+
+
+      async function obtenerJSON(){
+        const respuesta = await fetch('data.json');
+        const datos = await respuesta.json();
+        console.log(datos);
+        let d=document.createElement("p")
+        d.textContent=datos.autor;
+        document.getElementById("contenedor").appendChild(d);
+      }
+
+      async function obtenerJSONWeb(){
+        const respuesta = await fetch('https://openlibrary.org/subjects/love.json?published_in=1500-1600');
+        const datos = await respuesta.json();
+        console.log(datos);
+        let d=document.createElement("p")
+        d.textContent=datos.works[0].title;
+        document.getElementById("contenedor").appendChild(d);
+      }
+
+      async function getMusicInfo(artist) {
+        const respuesta = await fetch(`https://www.theaudiodb.com/api/v1/json/123/search.php?s=${artist}`);
+        const datos = await respuesta.json();
+        console.log(datos);
+        let d = document.createElement("p");
+        d.textContent = datos.artists[0].strBiography;
+        document.getElementById("contenedor").appendChild(d);
+      }
+
+      async function getMusicImage(artist){
+        const respuesta = await fetch(`https://www.theaudiodb.com/api/v1/json/123/search.php?s=${artist}`);
+        const datos = await respuesta.json();
+        console.log(datos);
+        let i=document.createElement("img");
+        i.src=datos.artists[0].strArtistFanart;
+        i.setAttribute("width", "800");
+        document.getElementById("contenedor").appendChild(i);
+      }
+
+      obtenerJSON();
+
+      document.getElementById("button").addEventListener("click",obtenerJSONWeb);
+
+      document.getElementById("Biografia").addEventListener("click", () => getMusicInfo("maluma"));
+      document.getElementById("FanArt").addEventListener("click", () => getMusicImage("maluma"));
+
+      document.getElementById("Biografia2").addEventListener("click", () => getMusicInfo("shakira"));
+      document.getElementById("FanArt2").addEventListener("click", () => getMusicImage("shakira"));
+
+
+
+
+    </script>
+
+</body>
+</html>
