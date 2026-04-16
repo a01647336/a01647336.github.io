@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Info del artista</h1>
+<div id="contenedor"></div>
+
+<script>
+async function getMusicInfo() {
+  const res = await fetch('http://localhost:2000/artist');
+  const data = await res.json();
+
+  let p = document.createElement("p");
+  p.textContent = data.artists[0].strBiography;
+
+  document.getElementById("contenedor").appendChild(p);
+}
+
+getMusicInfo();
+</script>
+
+</body>
+</html>
