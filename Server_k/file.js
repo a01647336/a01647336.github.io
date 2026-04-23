@@ -113,6 +113,9 @@ import fs from 'fs';
         });
       }
 
+
+
+
     //Esta función deberá enviar un json con los datos de las movimientos
     function getMovimientos(req, res) {
     //Tienes que corregir varias cosas en esta sección
@@ -125,6 +128,72 @@ import fs from 'fs';
       //Cambia el mensaje por algo más divertido
       res.end('Página no encontrada. Skill Issue brother');
     }
+
+          // Funciones del reto kueski
+      function simularPrestamo(req, res) {
+        const resultado = {
+          interes: 1200,
+          totalPagar: 11200,
+          pagoMensual: 1866.67
+        };
+
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(resultado));
+      }
+
+      function crearSolicitud(req, res) {
+        const solicitud = {
+          loanId: 101,
+          status: "pendiente"
+        };
+
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(solicitud));
+      }
+
+      function obtenerHistorial(req, res) {
+        const historial = [
+          { loanId: 101, monto: 10000, status: "pendiente" },
+          { loanId: 102, monto: 5000, status: "aprobado" }
+        ];
+
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(historial));
+      }
+
+      function obtenerDetalle(req, res) {
+        const detalle = {
+          loanId: 101,
+          monto: 10000,
+          plazo: 6,
+          interes: 1200,
+          totalPagar: 11200,
+          status: "pendiente"
+        };
+
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(detalle));
+      }
+
+      function evaluarElegibilidad(req, res) {
+        const resultado = {
+          aprobado: true,
+          montoMaximo: 20000
+        };
+
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(resultado));
+      }
+
+      function actualizarEstado(req, res) {
+        const respuesta = {
+          message: "Estado actualizado correctamente"
+        };
+
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(respuesta));
+      }
+
 
     //incluye el enlace a la documentación de createServer
     // https://nodejs.org/api/http.html#httpcreateserveroptions-requestlistener 
@@ -153,6 +222,26 @@ import fs from 'fs';
       }
       else if (url === '/miarchivo') {
         mostrarArchivos(req, res);
+      }
+
+      // Conexion de las funciones del reto kueski con el servidor
+      else if (url === '/api/loans/simulate') {
+        simularPrestamo(req, res);
+      }
+      else if (url === '/api/loans/request') {
+        crearSolicitud(req, res);
+      }
+      else if (url === '/api/loans/history') {
+        obtenerHistorial(req, res);
+      }
+      else if (url === '/api/loans/detail') {
+        obtenerDetalle(req, res);
+      }
+      else if (url === '/api/loans/eligibility') {
+        evaluarElegibilidad(req, res);
+      }
+      else if (url === '/api/loans/status') {
+        actualizarEstado(req, res);
       }
 
 
