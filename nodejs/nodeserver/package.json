@@ -2,12 +2,17 @@
   "name": "nodeserver",
   "version": "1.0.0",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "porfa": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "keywords": [],
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "sv443-joke-api": "^0.1.0"
+  }
 }
