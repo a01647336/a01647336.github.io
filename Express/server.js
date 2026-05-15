@@ -1,5 +1,6 @@
 import mysql from 'mysql2';
-import 'dotenv/config';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const connection = mysql.createConnection({
   host: 'mysql-1b336be3-tec-e448.a.aivencloud.com',
