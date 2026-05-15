@@ -1,5 +1,4 @@
-import express from 'express';
-import 'dotenv/config';
+import express from 'express';;
 import { get } from 'http';
 import mysql from 'mysql2';
 //Pendiente nombre de la librería
@@ -7,6 +6,8 @@ import NodeCache from 'node-cache';
 
 import path from 'path';
 import { fileURLToPath } from 'url';
+
+import dotenv from 'dotenv';
 
 
 //stdTTL
@@ -18,15 +19,19 @@ const __dirname = path.dirname(__filename);
 const app = express();
 
 
-//Completa los datos correctos
+dotenv.config();
+
 const connection = mysql.createConnection({
   host: 'mysql-1b336be3-tec-e448.a.aivencloud.com',
   port: 13269,
   user: process.env.AIVEN_USER,
   password: process.env.AIVEN_PASSWORD,
   database: 'defaultdb',
-});
 
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
 
 let datosDB;
 
