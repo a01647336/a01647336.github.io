@@ -1,6 +1,7 @@
 const axios = require('axios');
+require('dotenv').config();
 
-const API_KEY = 'TU_API_KEY_AQUI';
+const API_KEY = process.env.NODEJS3_API_KEY || 'TU_API_KEY_AQUI';
 
 async function obtenerEquipos() {
   try {

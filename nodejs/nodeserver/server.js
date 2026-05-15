@@ -1,5 +1,6 @@
 import http from 'http';
-const API_KEY = "7a55413e2c5a44c2bc463d88c6e79aa8";
+import 'dotenv/config';
+const API_KEY = process.env.FOOTBALL_API_KEY || '';
 
 let favoritos = [];
 
@@ -31,8 +32,8 @@ const server = http.createServer((req, res) => {
 
 });
 
-server.listen(2000, async () => {
-  console.log("Servidor en http://localhost:2000");
+server.listen(2001, async () => {
+  console.log("Servidor en http://localhost:2001");
 
   // 🔥 CLIENTE (se ejecuta cuando el server ya está listo)
 
@@ -51,7 +52,7 @@ server.listen(2000, async () => {
   console.log("GET:", partido);
 
   // POST a tu servidor
-  await fetch("http://localhost:2000/favoritos", {
+  await fetch("http://localhost:2001/favoritos", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -62,7 +63,7 @@ server.listen(2000, async () => {
   console.log("POST enviado");
 
   // GET para verificar
-  const res2 = await fetch("http://localhost:2000/favoritos");
+  const res2 = await fetch("http://localhost:2001/favoritos");
   const favs = await res2.json();
 
   console.log("GET favoritos:", favs);
@@ -90,7 +91,7 @@ const servidor = http.createServer(async (req, res) => {
   }
 });
 
-const puerto = 2000;
+const puerto = 2001;
 
 servidor.listen(puerto, () => {
   console.log(`Servidor en http://localhost:${puerto}`);
