@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Reflexión Digital",
+  "version": "1.0",
+  "description": "Muy pronto sabrás qué hace",
+  "permissions": ["activeTab"],
+  "host_permissions": [
+    "http://localhost:1984/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.google.com/*",
+        "*://*.facebook.com/*",
+        "*://*.amazon.com/*",
+        "*://chat.openai.com/*",
+        "*://chatgpt.com/*",
+        "*://*.chatgpt.com/*",
+        "*://eltapancomascota.com/*",
+        "*://*.eltapancomascota.com/*",
+        "*://experiencia21.tec.mx/*",
+        "*://*.experiencia21.tec.mx/*"
+      ],
+      "js": ["popup.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
